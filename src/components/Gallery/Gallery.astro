@@ -1,0 +1,199 @@
+---
+/**
+ * * Mosaic image gallery with lightbox modal
+ */
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import portadaImage from "@assets/images/portada.jpeg";
+import exteriorImage from "@assets/images/exterior.jpg";
+import salaImage from "@assets/images/sala.jpeg";
+import rioImage from "@assets/images/rio.jpeg";
+import hab1Image from "@assets/images/hab-1.jpeg";
+import hab2Image from "@assets/images/hab-2.jpeg";
+import bajadaImage from "@assets/images/bajada.jpeg";
+import parrillaImage from "@assets/images/parrilla.jpeg";
+import juegosImage from "@assets/images/juegos.jpg";
+import playaImage from "@assets/images/playa-2.jpg";
+import tvImage from "@assets/images/tv.jpeg";
+
+const galleryImages = [
+	{
+		src: portadaImage,
+		alt: "Vista principal de la propiedad",
+		span: "col-span-2 row-span-2 md:col-span-2 md:row-span-2",
+	},
+	{ src: exteriorImage, alt: "Exterior de la cabaña", span: "col-span-1 row-span-1" },
+	{ src: salaImage, alt: "Sala de estar", span: "col-span-1 row-span-1" },
+	{ src: rioImage, alt: "Vista del Río Paraná", span: "col-span-2 row-span-1 md:col-span-2" },
+	{ src: hab1Image, alt: "Habitación principal", span: "col-span-1 row-span-1" },
+	{ src: hab2Image, alt: "Segunda habitación", span: "col-span-1 row-span-1" },
+	{ src: bajadaImage, alt: "Bajada al río", span: "col-span-1 row-span-2 md:row-span-2" },
+	{ src: parrillaImage, alt: "Parrilla", span: "col-span-1 row-span-1" },
+	{ src: juegosImage, alt: "Área de juegos", span: "col-span-2 row-span-1 md:col-span-2" },
+	{ src: playaImage, alt: "Playa sobre el río", span: "col-span-1 row-span-1" },
+	{ src: tvImage, alt: "Living con TV", span: "col-span-1 row-span-1" },
+];
+---
+
+<section id="gallery" class="site-container scroll-mt-10 py-8 md:py-12">
+	<h2 class="h3 text-primary-500 mb-8 text-center uppercase">Galería de fotos</h2>
+
+	<div
+		class="grid auto-rows-[200px] grid-cols-2 gap-2 md:auto-rows-[250px] md:grid-cols-4 md:gap-4"
+	>
+		{
+			galleryImages.map((image, index) => (
+				<button
+					type="button"
+					class:list={[
+						"gallery-item group focus-visible:ring-primary-500 relative cursor-pointer overflow-hidden rounded-md focus:outline-none focus-visible:ring-2",
+						image.span,
+					]}
+					data-index={index}
+					aria-label={`Ver imagen: ${image.alt}`}
+				>
+					<Image
+						src={image.src}
+						alt={image.alt}
+						widths={[400, 600, 800]}
+						sizes="(max-width: 768px) 50vw, 25vw"
+						class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+					/>
+					<div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
+				</button>
+			))
+		}
+	</div>
+</section>
+
+<dialog
+	id="gallery-modal"
+	class="m-0 h-full max-h-full w-full max-w-full bg-black/90 p-0 backdrop:bg-black/90"
+>
+	<div class="flex h-full w-full flex-col items-center justify-center">
+		<div class="absolute top-4 right-4 z-10 flex items-center gap-4">
+			<span id="gallery-counter" class="text-sm text-white/80">1 / {galleryImages.length}</span>
+			<button
+				type="button"
+				id="gallery-close"
+				class="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+				aria-label="Cerrar galería"
+			>
+				<Icon name="tabler:x" class="size-6" />
+			</button>
+		</div>
+
+		<button
+			type="button"
+			id="gallery-prev"
+			class="absolute left-4 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+			aria-label="Imagen anterior"
+		>
+			<Icon name="tabler:arrow-narrow-left" class="size-8" />
+		</button>
+
+		<div
+			id="gallery-image-container"
+			class="flex max-h-[80vh] max-w-[90vw] items-center justify-center"
+		>
+			{
+				galleryImages.map((image, index) => (
+					<Image
+						src={image.src}
+						alt={image.alt}
+						widths={[800, 1200, 1600]}
+						sizes="90vw"
+						class:list={[
+							"gallery-modal-image max-h-[80vh] w-auto max-w-full object-contain",
+							index === 0 ? "" : "hidden",
+						]}
+						data-index={index}
+					/>
+				))
+			}
+		</div>
+
+		<button
+			type="button"
+			id="gallery-next"
+			class="absolute right-4 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+			aria-label="Siguiente imagen"
+		>
+			<Icon name="tabler:arrow-narrow-right" class="size-8" />
+		</button>
+	</div>
+</dialog>
+
+<script>
+	function initGallery() {
+		const modal = document.getElementById("gallery-modal") as HTMLDialogElement | null;
+		const counter = document.getElementById("gallery-counter");
+		const prevBtn = document.getElementById("gallery-prev");
+		const nextBtn = document.getElementById("gallery-next");
+		const closeBtn = document.getElementById("gallery-close");
+		const galleryItems = document.querySelectorAll<HTMLButtonElement>(".gallery-item");
+		const modalImages = document.querySelectorAll<HTMLImageElement>(".gallery-modal-image");
+
+		if (!modal || !counter || !prevBtn || !nextBtn || !closeBtn) return;
+
+		let currentIndex = 0;
+		const totalImages = modalImages.length;
+
+		function showImage(index: number) {
+			modalImages.forEach((img, i) => {
+				img.classList.toggle("hidden", i !== index);
+			});
+			currentIndex = index;
+			counter!.textContent = `${index + 1} / ${totalImages}`;
+		}
+
+		function openModal(index: number) {
+			showImage(index);
+			modal!.showModal();
+		}
+
+		function closeModal() {
+			modal!.close();
+		}
+
+		function nextImage() {
+			showImage((currentIndex + 1) % totalImages);
+		}
+
+		function prevImage() {
+			showImage((currentIndex - 1 + totalImages) % totalImages);
+		}
+
+		galleryItems.forEach((item) => {
+			item.addEventListener("click", () => {
+				const index = parseInt(item.dataset.index || "0", 10);
+				openModal(index);
+			});
+		});
+
+		closeBtn.addEventListener("click", closeModal);
+		nextBtn.addEventListener("click", nextImage);
+		prevBtn.addEventListener("click", prevImage);
+
+		modal.addEventListener("click", (e) => {
+			if (e.target === modal) {
+				closeModal();
+			}
+		});
+
+		document.addEventListener("keydown", (e) => {
+			if (!modal.open) return;
+
+			if (e.key === "ArrowRight") {
+				nextImage();
+			} else if (e.key === "ArrowLeft") {
+				prevImage();
+			}
+		});
+	}
+
+	initGallery();
+	document.addEventListener("astro:after-swap", initGallery);
+</script>

@@ -3,7 +3,6 @@
  * * Testimonial cards where the image can be either on top or bottom
  */
 
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 
@@ -17,22 +16,6 @@ const { title, testimonial: testimonialText, image } = testimonial.data;
 ---
 
 <div class="grid gap-1 lg:auto-rows-fr">
-	<div
-		class:list={[
-			"aspect-[3/4] overflow-hidden",
-			{
-				"lg:order-2": imagePosition === "bottom",
-			},
-		]}
-	>
-		<Image
-			src={image}
-			alt={title}
-			width={450}
-			densities={[1.5, 2]}
-			class="h-auto min-h-full w-full min-w-full object-cover"
-		/>
-	</div>
 	<div
 		class=""
 		class:list={[

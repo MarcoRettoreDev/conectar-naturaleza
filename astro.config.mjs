@@ -34,6 +34,7 @@ export default defineConfig({
 					"chevron-down",
 					"category",
 					"calendar-event",
+					"map-pin",
 				],
 			},
 		}),

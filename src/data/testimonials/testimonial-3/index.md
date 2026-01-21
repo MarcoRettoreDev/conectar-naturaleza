@@ -1,6 +1,5 @@
 ---
-title: BRIAN & KEVIN
-testimonial: Jenna was always available to answer our questions, offer recommendations, and ensure that everything ran smoothly. Her dedication to capturing our love story was evident in every shot, and we are grateful for her beautiful work.
-image: ./couple-7-crop.jpg
-order: 1
+title: Silvana y familia
+testimonial: Tienen la Costanera a metros, espectacular,lleva cañaaaa!! súper tranquilo y seguro
+order: 3
 ---

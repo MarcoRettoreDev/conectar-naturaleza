@@ -16,11 +16,11 @@ export interface SiteDataProps {
 
 // Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "Horizon Photography",
+	name: "Conectar Naturaleza",
 	// Your website's title and description (meta fields)
-	title: "Horizon - a beautiful photography website template made with Astro and Tailwind CSS",
+	title: "Conectar Naturaleza - Web oficial",
 	description:
-		"Get your next website up and running quickly with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.",
+		"Desconéctate de la rutina y sumérgete en la tranquilidad que te mereces, te ofrecemos un contacto excepcional con la naturaleza en un ambiente tranquilo y reservado, con bajada propia a la playa tanto para lanchas como peatones.",
 	useViewTransitions: true,
 	// Your information!
 	author: {
@@ -31,8 +31,8 @@ const siteData: SiteDataProps = {
 
 	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
-		src: "/images/cosmic-themes-logo.jpg",
-		alt: "Cosmic Themes logo",
+		src: "/images/logo-transparent.png",
+		alt: "Conectar Naturaleza logo",
 	},
 };
 
