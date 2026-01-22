@@ -1,6 +1,5 @@
 ---
 import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
-import siteData from "@config/siteData.json";
 import { Icon } from "astro-icon/components";
 
 import Button from "@components/Button/Button.astro";
@@ -24,10 +23,10 @@ const today = new Date();
 							<div class="flex justify-center py-2 text-center">
 								<SiteLogo />
 							</div>
-							<FooterLink href="/">{navItem.text}</FooterLink>
+							<FooterLink href={navItem.link}>{navItem.text}</FooterLink>
 						</>
 					) : (
-						<FooterLink href="/">{navItem.text}</FooterLink>
+						<FooterLink href={navItem.link}>{navItem.text}</FooterLink>
 					),
 				)
 			}
@@ -61,5 +60,8 @@ const today = new Date();
 				<span class="sr-only">AirBnb</span>
 			</a>
 		</div>
+		<p class="text-primary-500">
+			Copyright {today.getFullYear()}, all rights reserved
+		</p>
 	</div>
 </footer>

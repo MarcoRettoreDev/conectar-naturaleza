@@ -22,6 +22,10 @@ const navConfig: navItem[] = [
 		link: "/#facilities",
 	},
 	{
+		text: "Nosotros",
+		link: "/#about",
+	},
+	{
 		text: "Contacto",
 		link: "/#contact",
 	},

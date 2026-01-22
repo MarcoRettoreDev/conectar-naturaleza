@@ -15,8 +15,9 @@
 			"@components/*": ["src/components/*"],
 			"@assets/*": ["src/assets/*"],
 			"@images/*": ["src/assets/images/*"],
+			"@icons/*": ["src/icons/*"],
 			"@videos/*": ["src/assets/videos/*"],
-			"@/*": ["src/*"]
-		}
-	}
+			"@/*": ["src/*"],
+		},
+	},
 }

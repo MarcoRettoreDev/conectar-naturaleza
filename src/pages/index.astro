@@ -1,12 +1,10 @@
 ---
 import About from "@components/About/About.astro";
-import Button from "@components/Button/Button.astro";
 import Contact from "@components/Contact/Contact.astro";
 import FeatureNumbers from "@components/Feature/FeatureNumbers.astro";
 import Gallery from "@components/Gallery/Gallery.astro";
 // components
 import Hero from "@components/Hero/Hero.astro";
-import PortfolioThreeCards from "@components/Portfolio/PortfolioThreeCards.astro";
 import Facilities from "@components/Pricing/Facilities.astro";
 import Testimonials from "@components/Testimonials/Testimonials.astro";
 // data
@@ -18,7 +16,6 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 <BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
 	<Hero />
 	<FeatureNumbers />
-	<!-- <PortfolioThreeCards /> -->
 	<Facilities />
 	<About />
 	<Gallery />
