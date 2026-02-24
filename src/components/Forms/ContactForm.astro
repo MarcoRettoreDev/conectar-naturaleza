@@ -1,7 +1,8 @@
 ---
 import Button from "@components/Button/Button.astro";
+import siteData from "@config/siteData.json";
 
-const WHATSAPP_NUMBER = "+542901449739";
+const WHATSAPP_NUMBER = siteData.contactInfo.phone;
 ---
 
 <form id="contact-form" name="contact form" class="flex h-full flex-col justify-between gap-4">
@@ -34,12 +35,8 @@ const WHATSAPP_NUMBER = "+542901449739";
 	</div>
 	<div>
 		<label for="contact-message" class="font-heading-1 text-lg uppercase">Mensaje</label>
-		<textarea
-			name="message"
-			class="form__input"
-			id="contact-message"
-			rows="6"
-			placeholder=""></textarea>
+		<textarea name="message" class="form__input" id="contact-message" rows="6" placeholder=""
+		></textarea>
 	</div>
 	<div class="flex">
 		<Button variant="primary" type="submit" class="w-full px-10 md:w-fit">Consultar</Button>

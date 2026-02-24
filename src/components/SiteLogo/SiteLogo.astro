@@ -1,15 +1,17 @@
 ---
-import logo from "@icons/logo-transparent.png";
+import whiteLogo from "@icons/logo-white-transparent.png";
+import darkLogo from "@icons/logo-black-transparent.png";
 import { Image } from "astro:assets";
+
+const { width, height, dark } = Astro.props;
 ---
 
 <a class="primary-focus flex items-center align-middle" href="/" aria-label="Home">
 	<Image
-		src={logo}
+		src={dark ? darkLogo : whiteLogo}
 		alt="Conectar Naturaleza logo"
 		loading="eager"
-		width={140}
-		height={100}
-		class="h-24 w-auto"
+		width={width ?? 100}
+		height={height ?? 100}
 	/>
 </a>

@@ -13,6 +13,7 @@ interface Props {
 const { class: className } = Astro.props as Props;
 
 import wzpImage from "@assets/images/whatsapp.png";
+import siteData from "@config/siteData.json";
 ---
 
 <section
@@ -34,7 +35,7 @@ import wzpImage from "@assets/images/whatsapp.png";
 			<div class="mx-auto mt-8 flex aspect-square justify-center overflow-hidden">
 				<a
 					target="_blank"
-					href="https://wa.me/+542901449739?text=Hola,%20estoy%20buscando%20alojamiento%20en%20Ituzaingó"
+					href={`https://wa.me/${siteData.contactInfo.phone}?text=Hola,%20estoy%20buscando%20alojamiento%20en%20Ituzaingó`}
 				>
 					<Image src={wzpImage} alt="whatsapp logo" />
 				</a>

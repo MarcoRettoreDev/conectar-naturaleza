@@ -3,10 +3,9 @@ export interface SiteDataProps {
 	title: string;
 	description: string;
 	useViewTransitions?: boolean; // defaults to false. Set to true to enable some Astro 3.0 view transitions
-	author: {
+	contactInfo: {
 		name: string;
-		email: string;
-		twitter: string; // used for twitter cards when sharing a blog post on twitter
+		phone: string;
 	};
 	defaultImage: {
 		src: string;
@@ -23,10 +22,9 @@ const siteData: SiteDataProps = {
 		"Desconéctate de la rutina y sumérgete en la tranquilidad que te mereces, te ofrecemos un contacto excepcional con la naturaleza en un ambiente tranquilo y reservado, con bajada propia a la playa tanto para lanchas como peatones.",
 	useViewTransitions: true,
 	// Your information!
-	author: {
-		name: "Cosmic Themes",
-		email: "creator@cosmicthemes.com",
-		twitter: "Cosmic_Themes",
+	contactInfo: {
+		name: "Conectar Naturaleza",
+		phone: "+5493786414965",
 	},
 
 	// default image for meta tags if the page doesn't have an image already

@@ -16,7 +16,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 
 <div
 	id="nav__container"
-	class="initial fixed top-0 left-0 z-30 flex w-full flex-col py-2 transition-[padding,background-color] duration-300"
+	class="initial fixed top-0 left-0 z-30 flex w-full flex-col py-8 transition-[padding,background-color] duration-300"
 	transition:name={`nav`}
 	{...rest}
 >
@@ -25,7 +25,7 @@ const { startStyle = "default", rest } = Astro.props as Props;
 			<header class="flex w-full items-center gap-2">
 				<!-- home button / image -->
 				<div class="flex flex-auto justify-start">
-					<SiteLogo />
+					<SiteLogo dark={true} />
 				</div>
 
 				<!-- desktop nav menu -->
@@ -107,5 +107,6 @@ const { startStyle = "default", rest } = Astro.props as Props;
 		/* @apply bg-base-50 py-0; */
 		background-color: var(--color-base-50);
 		padding-block: 0;
+		padding: 1.3rem 0;
 	}
 </style>
