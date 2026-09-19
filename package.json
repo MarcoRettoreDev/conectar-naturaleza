@@ -1,0 +1,7 @@
+{
+	"name": "conectar-naturaleza-workspace",
+	"private": true,
+	"scripts": {
+		"build": "pnpm --filter ./web build"
+	}
+}
