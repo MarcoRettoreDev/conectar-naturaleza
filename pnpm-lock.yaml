@@ -50,6 +50,9 @@ importers:
       astro-seo:
         specifier: 0.8.4
         version: 0.8.4(@emnapi/runtime@1.11.3)(prettier-plugin-astro@0.14.1)(prettier@3.9.8)(typescript@5.8.3)
+      sharp:
+        specifier: 0.33.5
+        version: 0.33.5
       tailwindcss:
         specifier: 4.1.5
         version: 4.1.5
