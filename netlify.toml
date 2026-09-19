@@ -3,6 +3,6 @@
   framework = "astro"
 
 [build]
-  command = "pnpm --dir web build"
+  command = "pnpm --filter ./web build"
   publish = "web/dist"
   functions = "netlify/functions/"
