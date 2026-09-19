@@ -6,7 +6,7 @@ settings:
 
 importers:
 
-  .:
+  web:
     dependencies:
       '@astrojs/mdx':
         specifier: 4.2.6

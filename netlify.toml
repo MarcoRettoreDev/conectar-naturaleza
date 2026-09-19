@@ -1,8 +1,8 @@
 [dev]
-  command = "npm run dev"
+  command = "pnpm --dir web dev"
   framework = "astro"
 
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "pnpm --dir web build"
+  publish = "web/dist"
   functions = "netlify/functions/"
