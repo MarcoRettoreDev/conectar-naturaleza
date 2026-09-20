@@ -36,4 +36,4 @@ pnpm build
 Set `VITE_ADMIN_PASSWORD` in the admin site's environment to configure its fixed
 client-side gate. If unset, the documented development fallback is
 `conectar-admin`; this password is not suitable for sensitive production data.
-The separate `netlify.admin.toml` publishes the admin site independently.
+Set the Netlify package directory to `admin`; Netlify discovers `admin/netlify.toml` there and publishes `dist`.
