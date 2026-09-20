@@ -24,8 +24,7 @@ export const validateReservation = (reservation: Pick<Reservation, 'checkIn' | '
 export const validateExpense = (expense: Pick<Expense, 'date' | 'kind' | 'description' | 'amount'>): string | null => {
   if (!isValidDate(expense.date)) return 'Ingresa una fecha válida.';
   if (!isPositiveFinite(expense.amount)) return 'El importe debe ser un número positivo.';
-  if (expense.kind === 'extraordinary' && expense.description.trim().length > 255) return 'La descripción no puede superar 255 caracteres.';
-  if (!expense.description.trim()) return 'Ingresa una descripción.';
+  if (expense.description.trim().length > 255) return 'La descripción no puede superar 255 caracteres.';
   return null;
 };
 

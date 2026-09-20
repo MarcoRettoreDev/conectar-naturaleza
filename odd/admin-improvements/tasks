@@ -1,0 +1,11 @@
+# Admin improvements task mirror
+
+Canonical task document: `odd/tasks/admin-improvements.md`
+
+1. Refactor admin state/navigation into two tabs and floating movement flow. **Done:** `main.tsx`/`styles.css`; tests and build passed.
+2. Add formatted float inputs and optional expense description with updated validation. **Done:** `money.ts` plus form/validation updates; tests/build passed.
+3. Add toast feedback, delete confirmation modal, and prioritized detail views. **Done:** `main.tsx`/`styles.css`; tests/build/diff check passed.
+4. Add history filters (month, platform) and reservation passenger search. **Done:** `history.ts` helpers/tests and mobile controls; tests/build passed.
+5. Persist browser session and add dark/light mode toggle. **Done:** `preferences.ts` helpers/tests, local auth persistence, logout, theme toggle; tests/build passed.
+6. Add admin PWA logo/manifest integration and remove any Netlify badge. **Done:** admin manifest/assets wired; both builds passed; no badge found.
+7. Add focused tests and run admin/web verification. **Done:** admin tests/build, web build, diff check, badge search, and manifest validation passed; browser/E2E remains unverified.

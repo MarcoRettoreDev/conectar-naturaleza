@@ -47,6 +47,15 @@ describe('reservation and expense validation', () => {
     })).toBe('La descripción no puede superar 255 caracteres.');
   });
 
+  it('accepts expenses without a description', () => {
+    expect(validateExpense({
+      date: '2025-05-09',
+      kind: 'variable',
+      description: '',
+      amount: 25,
+    })).toBeNull();
+  });
+
   it('accepts a valid variable expense', () => {
     expect(validateExpense({
       date: '2025-05-09',
