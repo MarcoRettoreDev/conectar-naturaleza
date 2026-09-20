@@ -54,4 +54,4 @@ Completed. Added Vitest coverage for calculations and validation and documented 
 - `pnpm --filter conectar-naturaleza-admin build`: PASS.
 - Generated `admin/dist` and `admin/tsconfig.tsbuildinfo` are ignored and not tracked.
 - `netlify.admin.toml` uses `base = "admin"` and `publish = "dist"`.
-- No commits created; delivery remains in the working tree for review.
+- Work-unit commit: `981473a` (`feat(admin): add cabin finance manager`).
