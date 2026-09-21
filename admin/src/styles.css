@@ -21,7 +21,9 @@ button, input, select { font: inherit; }
 :root[data-theme='dark'] .text-emerald-700, :root[data-theme='dark'] .text-red-600 { color: #8ed1aa; }
 :root[data-theme='dark'] .empty-state { border-color: #496358; color: #a9c1b5; }
 :root[data-theme='dark'] .month-selector { border-color: #496358; color: #e5eee8; background: #182923; color-scheme: dark; }
-:root[data-theme='dark'] .expense-amount { color: #e5eee8; }
+:root[data-theme='dark'] .detail-primary { color: #ffffff; }
+:root[data-theme='dark'] .detail-amount { color: #e7e2d5; }
+:root[data-theme='dark'] .expense-amount { color: #e7e2d5; }
 .field { display: grid; gap: .35rem; font-size: .8rem; font-weight: 600; color: #537066; }
 .field input, .field select { width: 100%; border: 1px solid #d8e2d9; border-radius: .6rem; padding: .65rem .7rem; color: #183b35; background: #fff; }
 .btn { border-radius: .65rem; padding: .65rem 1rem; font-weight: 700; cursor: pointer; }
