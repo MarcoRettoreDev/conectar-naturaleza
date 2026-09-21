@@ -9,3 +9,8 @@ Canonical task document: `odd/tasks/admin-improvements.md`
 5. Persist browser session and add dark/light mode toggle. **Done:** `preferences.ts` helpers/tests, local auth persistence, logout, theme toggle; tests/build passed.
 6. Add admin PWA logo/manifest integration and remove any Netlify badge. **Done:** admin manifest/assets wired; both builds passed; no badge found.
 7. Add focused tests and run admin/web verification. **Done:** admin tests/build, web build, diff check, badge search, and manifest validation passed; browser/E2E remains unverified.
+
+Follow-up adjustments:
+8. Fix modal action overlap and mobile form button visibility. **Done:** responsive modal spacing; tests/build passed.
+9. Improve dark-theme contrast for dashboard month selector and expense amounts. **Done:** targeted contrast classes/colors; tests/build passed.
+10. Correct installed-PWA icon metadata and document Netlify badge configuration. **Done:** corrected relative manifest/icon paths and metadata; assets verified.

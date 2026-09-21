@@ -20,6 +20,8 @@ button, input, select { font: inherit; }
 :root[data-theme='dark'] .text-emerald-800 { color: #b7e0ca; }
 :root[data-theme='dark'] .text-emerald-700, :root[data-theme='dark'] .text-red-600 { color: #8ed1aa; }
 :root[data-theme='dark'] .empty-state { border-color: #496358; color: #a9c1b5; }
+:root[data-theme='dark'] .month-selector { border-color: #496358; color: #e5eee8; background: #182923; color-scheme: dark; }
+:root[data-theme='dark'] .expense-amount { color: #e5eee8; }
 .field { display: grid; gap: .35rem; font-size: .8rem; font-weight: 600; color: #537066; }
 .field input, .field select { width: 100%; border: 1px solid #d8e2d9; border-radius: .6rem; padding: .65rem .7rem; color: #183b35; background: #fff; }
 .btn { border-radius: .65rem; padding: .65rem 1rem; font-weight: 700; cursor: pointer; }
@@ -48,4 +50,9 @@ button, input, select { font: inherit; }
 .action-menu.is-open { display: flex; }
 .action-btn { border-radius: 999px; background: white; color: #1c5549; padding: .65rem 1rem; font-weight: 700; box-shadow: 0 4px 16px #183b3530; }
 @media (min-width: 640px) { .modal-backdrop { align-items: center; padding: 1rem; } .modal { max-width: 42rem; max-height: 90vh; border-radius: 1rem; margin: auto; } .confirmation-modal { max-width: 28rem; } .history-filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .history-search { grid-column: span 2; } }
-@media (max-width: 640px) { .desktop-table { display: none; } }
+@media (max-width: 640px) {
+  .desktop-table { display: none; }
+  .modal-backdrop { align-items: center; padding: 1rem .75rem calc(1rem + env(safe-area-inset-bottom)); }
+  .modal { max-height: calc(100dvh - 2rem - env(safe-area-inset-bottom)); border-radius: 1rem; }
+  .modal form > .btn-primary { margin-bottom: 3.5rem; }
+}

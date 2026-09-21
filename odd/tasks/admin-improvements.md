@@ -25,5 +25,11 @@ Modernize the admin finance workflow with persistent browser sessions, clearer m
 - [ ] Mobile layout works without horizontal overflow.
 - [x] Build and tests pass for affected packages.
 
+## Follow-up adjustments
+8. Fix modal action overlap and ensure mobile form buttons remain visible. **Done:** responsive modal action spacing and safe bottom space added; tests/build passed.
+9. Improve dark-theme contrast for dashboard month selector and expense amounts. **Done:** targeted classes/colors added; tests/build passed.
+10. Correct installed-PWA icon metadata and document Netlify badge configuration. **Done:** corrected relative manifest/icon paths, metadata, and verified 192/512 PNG assets.
+
 ## Progress
 - [x] Completed; browser/E2E interaction remains unverified.
+- [x] Follow-up adjustments completed; browser/E2E viewport testing remains unverified.
