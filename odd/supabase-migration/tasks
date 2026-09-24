@@ -1,0 +1,9 @@
+# Supabase shared admin data task mirror
+
+Canonical task document: `odd/tasks/supabase-migration.md`
+
+1. Add Supabase client/config and secure environment handling. **Done:** client, root env loading, ignore rules.
+2. Add SQL schema, ownership columns, indexes, and RLS policies. **Done:** SQL migration added.
+3. Replace local persistence with authenticated Supabase CRUD. **Done:** auth and CRUD integrated.
+4. Add one-time local data migration. **Done:** explicit validated migration with duplicate avoidance and backup preservation.
+5. Update auth, tests, docs, and deployment verification. **Done:** mocked tests, README setup guidance, and stale-password documentation correction.

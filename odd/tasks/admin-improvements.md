@@ -33,3 +33,8 @@ Modernize the admin finance workflow with persistent browser sessions, clearer m
 ## Progress
 - [x] Completed; browser/E2E interaction remains unverified.
 - [x] Follow-up adjustments completed; browser/E2E viewport testing remains unverified.
+
+## Next feature adjustments
+11. Sort reservations and expenses by date descending in history. **Done:** stable newest-first history sorting and tests added.
+12. Support editing reservations and expenses through the existing movement modal. **Done:** prefilled id-preserving edit flow and store update actions added.
+13. Default history month to the current month and display localized month names. **Done:** current-month default and Spanish month labels added.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { filterExpenses, filterReservations, historyMonths } from './history';
+import { filterExpenses, filterReservations, formatHistoryMonth, historyMonths } from './history';
 import type { Expense, Reservation } from '../types';
 
 const reservations: Reservation[] = [
@@ -13,6 +13,23 @@ describe('history filters', () => {
     expect(historyMonths(reservations, expenses)).toEqual(['2025-05', '2025-04']);
     expect(filterReservations(reservations, 'all', 'all', '')).toHaveLength(2);
     expect(filterExpenses(expenses, 'all')).toHaveLength(1);
+  });
+
+  it('sorts records newest first while keeping input-order ties stable', () => {
+    const tied = [
+      { ...reservations[0], id: 'older-tie', checkIn: '2025-05-10' },
+      { ...reservations[0], id: 'newer', checkIn: '2025-06-10' },
+      { ...reservations[0], id: 'newer-tie', checkIn: '2025-06-10' },
+    ];
+    expect(filterReservations(tied, 'all', 'all', '').map((item) => item.id)).toEqual(['newer', 'newer-tie', 'older-tie']);
+    expect(filterExpenses([
+      { ...expenses[0], id: 'old', date: '2025-04-02' },
+      { ...expenses[0], id: 'new', date: '2025-05-02' },
+    ], 'all').map((item) => item.id)).toEqual(['new', 'old']);
+  });
+
+  it('formats month labels in Spanish while retaining YYYY-MM values', () => {
+    expect(formatHistoryMonth('2026-09')).toBe('Septiembre 2026');
   });
 
   it('combines month, platform, and passenger filters', () => {

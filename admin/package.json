@@ -11,6 +11,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@supabase/supabase-js": "latest",
     "@vitejs/plugin-react": "latest",
     "vite": "latest",
     "typescript": "latest",
