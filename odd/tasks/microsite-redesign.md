@@ -14,11 +14,11 @@ Replace the old Astro template on the public landing with the turismo-regional m
 
 ## Tasks
 
-- T1 [S1,S7] Add React/Tailwind deps and copy the UI primitives + design tokens. Route: inline (deps, primitives, lib done) + worker (tokens CSS, astro config). Commit: pending
-- T2 [S6] Create `web/src/data/contents.json` and the build-time loader that turns photo files into gallery data. Route: worker. Commit: pending
-- T3 [S1,S2,S3,S4,S5] Port the microsite page (header, gallery, listing, quote card, bar, footer) with WhatsApp quote message + test. Route: worker (lib/whatsapp.ts + test done inline, GREEN 3/3). Commit: pending
-- T4 [S5] Delete the old template components, styles, data, icons, images and unused deps; update docs. Route: inline. Commit: pending
-- T5 [all] Build, lint, test, and visual check. Route: inline. Commit: n/a
+- T1 [S1,S7] Add React/Tailwind deps and copy the UI primitives + design tokens. Route: inline + worker. Commit: 31b5cd2 [x]
+- T2 [S6] Create `web/src/data/contents.json` and the build-time loader that turns photo files into gallery data. Route: worker. Commit: 31b5cd2 [x]
+- T3 [S1,S2,S3,S4,S5] Port the microsite page (header, gallery, listing, quote card, bar, footer) with WhatsApp quote message + test. Route: worker (lib/whatsapp.ts + test done inline, GREEN 3/3). Commit: 31b5cd2 [x]
+- T4 [S5] Delete the old template components, styles, data, icons, images and unused deps; update docs. Route: inline. Commit: 8409bd8 [x]
+- T5 [all] Build, lint, test, and visual check. Route: inline. Commit: n/a [x]
 
 ## Log
 
@@ -50,3 +50,4 @@ Si tienes alguna duda, hazmela saber antes de suponer"
   - Header: our logo `src/icons/logo-black-transparent.png` (resized via getImage) + «Conectar Naturaleza», linking to `/`; section nav Fotos/Servicios/Opiniones/Ubicación; Compartir copies location.href. Footer (static .astro): horizonte svg, verde-900 band, `logo-white-transparent.png`, slogan «Desconectá de la rutina y conectá con eso que te hace bien.», Booking/Airbnb links, © year.
   - Photo grouping for contents.json gallery.spaces (files in src/assets/images): Exterior y entorno [portada.jpeg, exterior.jpg, exterior-2.jpeg, cielo-verde.jpg, juegos.jpg]; Playa y bajada al río [playa-2.jpg, bajada.jpeg, bajada-1.jpg, bajada-peatonal.jpeg]; Living y comedor [sala.jpeg, WhatsApp Image 2026-04-16 at 18.29.37.jpeg, tv.jpeg, WhatsApp Image 2026-04-16 at 18.29.36.jpeg]; Cocina [cocina.jpeg, IMG_1094.jpg, vajilla.jpg, amenities.jpg]; Dormitorio principal [hab-1.jpg, hab1-2.jpeg] beds 1× «2 plazas»; Segundo dormitorio [hab-2.jpg, WhatsApp Image 2026-04-16 at 18.29.38.jpeg] beds 1× «Cama marinera», 1× «1 plaza»; Baño [banio-1.jpg, banio-2.jpg, banio.jpeg, banio-3.jpeg]; Parrilla [parrilla.jpeg, parrilla-2.jpg]. Hero: portada, exterior, sala, hab-1, playa-2. whatsapp.png is unused after the port. Some files carry EXIF rotation; verify output orientation.
   - Content facts from the old site: capacity 5/6 (use max 6); A/A en las habitaciones; TV con Flow y Wifi; ropa de cama incluida (towels unknown → null); amenities (shampoo, crema de enjuague, jabón, aceite, sal, café, té); bajada a la playa a 50 m (lanchas y peatones); complejo privado «Mattes», máxima seguridad; espacios verdes y plaza de juegos; parrilla; cocina equipada. Location lat -27.5915042, lng -56.7093488, Ituzaingó, Corrientes, Argentina, a orillas del Río Paraná. WhatsApp +5493786414965. House rules unknown → items [] (section hidden). Testimonials from src/data/testimonials (Petter y amigos / Gloria y familia / Silvana y familia, rating 5, month null).
+- L5 (evidence): `pnpm test` 3/3, `pnpm lint` exit 0, `pnpm build` OK (only warning: empty "internal" chunk). Headless Brave run: quote flow opens `https://wa.me/5493786414965?text=…` with Llegada/Salida/Noches/Huéspedes; gallery sheet, calendar and mobile layout checked by screenshot; EXIF orientation correct. Fixes during verification: React hydration error #418 caused by @playform/compress HTML minification (HTML compression turned off); `.astro` lint parse error caused by TypeScript 7 hoisted from admin (web now pins typescript 5.8.3 as devDependency). Slice note: 2 commits total ~6.2k changed lines (mostly deletions and copied UI); user decides PR slicing.
