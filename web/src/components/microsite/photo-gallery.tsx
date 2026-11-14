@@ -402,11 +402,23 @@ export default function PhotoGallery({
         return () => cancelAnimationFrame(frame);
     }, [open, startSpaceId, gallery.spaces, scrollToSpace]);
 
+    // Brings the active chip into view by scrolling only its own bar: `scrollIntoView` also touches the gallery's
+    // vertical scroll and cancels the smooth scroll a chip click just started.
     useEffect(() => {
-        if (activeSpaceId !== null) {
-            chipRefs.current
-                .get(activeSpaceId)
-                ?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        const chip =
+            activeSpaceId === null
+                ? undefined
+                : chipRefs.current.get(activeSpaceId);
+        const bar = chip?.parentElement;
+        if (!chip || !bar) {
+            return;
+        }
+        const chipBox = chip.getBoundingClientRect();
+        const barBox = bar.getBoundingClientRect();
+        if (chipBox.left < barBox.left) {
+            bar.scrollLeft += chipBox.left - barBox.left;
+        } else if (chipBox.right > barBox.right) {
+            bar.scrollLeft += chipBox.right - barBox.right;
         }
     }, [activeSpaceId]);
 

@@ -17,39 +17,25 @@
     "max_capacity": 6,
     "description": "Cabaña en el complejo privado «Mattes», con máxima seguridad, a orillas del Río Paraná. Tiene bajada propia a la playa, a 50 m, tanto para lanchas como para peatones. El complejo ofrece espacios verdes y plaza de juegos; la cabaña tiene parrilla y cocina equipada.",
     "includes_bed_linen": true,
-    "includes_towels": null
+    "includes_towels": true
   },
   "bedrooms": [
     {
       "name": "Dormitorio principal",
-      "beds": [
-        {
-          "bed_type": "2 plazas",
-          "quantity": 1
-        }
-      ],
-      "text": "Aire acondicionado"
+      "beds": [],
+      "text": "Cama de 2 plazas • Aire split"
     },
     {
       "name": "Segundo dormitorio",
-      "beds": [
-        {
-          "bed_type": "Cama marinera",
-          "quantity": 1
-        },
-        {
-          "bed_type": "1 plaza",
-          "quantity": 1
-        }
-      ],
-      "text": "Aire acondicionado"
+      "beds": [],
+      "text": "Cama marinera • Cama cucheta • Aire acondicionado"
     }
   ],
   "bathrooms": [
     {
       "name": "Baño",
       "beds": [],
-      "text": null
+      "text": "Ducha con termotanque • bidet"
     }
   ],
   "amenities": [
@@ -60,7 +46,7 @@
     },
     {
       "icon": "tv",
-      "label": "TV con Flow",
+      "label": "TV con Flow (pack fútbol)",
       "shared": false
     },
     {
@@ -147,6 +133,18 @@
       "month": null,
       "rating": 5,
       "comment": "Tienen la Costanera a metros, espectacular,lleva cañaaaa!! súper tranquilo y seguro"
+    },
+    {
+      "author_name": "Jimena y Flia",
+      "month": null,
+      "rating": 5,
+      "comment": "La cabaña está muy bien equipada y limpia, con conectividad. Marco, el anfitrión, es sumamente atento. Acepta mascotas sin problemas. Tiene bajada propia al río y, en los días que estuvimos, la playa estuvo muy tranquila. El entorno es agradable y silencioso, con real oportunidad de conectar con la naturaleza."
+    },
+    {
+      "author_name": "Raquel y grupo",
+      "month": null,
+      "rating": 5,
+      "comment": "Pasamos para agradecer por la excelente estadía que tuvimos: ropa de cama y baño muy limpios. Entrada y salida muy prácticas. La casa cuenta con todos los utensilios básicos, y agradecemos la atención y la agilidad para respondernos y recomendarnos lugares. Felicitaciones al anfitrión Marco. Nos gustó mucho esta experiencia y, sin dudas, la recomiendo."
     }
   ],
   "location": {

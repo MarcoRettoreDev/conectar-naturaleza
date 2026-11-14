@@ -70,14 +70,14 @@ export default function MicrositeHeader({
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 md:py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-8">
                 <a
                     href="/"
-                    className="flex shrink-0 items-center gap-2 justify-self-start text-base font-semibold"
+                    className="flex shrink-0 items-center gap-3 justify-self-start text-base font-semibold"
                 >
                     <img
                         src={logoUrl}
                         alt=""
-                        width={40}
-                        height={40}
-                        className="size-10"
+                        width={64}
+                        height={64}
+                        className="size-16"
                     />
                     {name}
                 </a>

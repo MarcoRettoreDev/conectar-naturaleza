@@ -310,7 +310,7 @@ export default function Listing({
         <main className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
             <section
                 id="fotos"
-                className="flex scroll-mt-24 flex-col gap-6 md:pt-8"
+                className="flex scroll-mt-30 flex-col gap-6 md:pt-8"
             >
                 <h1 className="order-2 text-4xl leading-[1.2] font-bold tracking-[-0.5px] md:order-1">
                     {site.name}
@@ -394,7 +394,7 @@ export default function Listing({
                             <Separator />
                             <section
                                 id="servicios"
-                                className="flex scroll-mt-24 flex-col gap-5"
+                                className="flex scroll-mt-30 flex-col gap-5"
                             >
                                 <SectionTitle>Servicios ofrecidos</SectionTitle>
                                 {linens.length > 0 && (
@@ -449,14 +449,14 @@ export default function Listing({
                     {/* On a phone the quote card goes here; on a wide screen it stays beside the page. */}
                     <div
                         id="reserva"
-                        className="flex scroll-mt-24 flex-col gap-4 lg:hidden"
+                        className="flex scroll-mt-30 flex-col gap-4 lg:hidden"
                     >
                         {bookingCard}
                     </div>
                 </div>
 
                 <aside className="hidden lg:block">
-                    <div className="sticky top-24 flex max-h-[calc(100vh-7rem)] flex-col gap-4 overflow-y-auto pb-2">
+                    <div className="sticky top-30 flex max-h-[calc(100vh-8.5rem)] flex-col gap-4 overflow-y-auto pb-2">
                         {bookingCard}
                     </div>
                 </aside>
@@ -469,7 +469,7 @@ export default function Listing({
                     <>
                         <section
                             id="opiniones"
-                            className="flex scroll-mt-24 flex-col gap-6"
+                            className="flex scroll-mt-30 flex-col gap-6"
                         >
                             <SectionTitle>Opiniones</SectionTitle>
                             <div className="grid gap-8 md:grid-cols-2 md:gap-x-12">
@@ -485,7 +485,7 @@ export default function Listing({
 
                 <section
                     id="ubicacion"
-                    className="flex scroll-mt-24 flex-col items-start gap-4"
+                    className="flex scroll-mt-30 flex-col items-start gap-4"
                 >
                     <SectionTitle>
                         Ubicación de {site.name} en {site.locality}
