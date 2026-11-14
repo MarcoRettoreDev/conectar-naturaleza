@@ -4,3 +4,7 @@ packages:
 allowBuilds:
   esbuild: true
   sharp: true
+overrides:
+  # One React for the whole workspace: two copies break hooks ("reading 'useCallback'") in the admin bundle.
+  react: 19.3.1
+  react-dom: 19.3.1
