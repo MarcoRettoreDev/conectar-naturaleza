@@ -15,8 +15,36 @@ pnpm install
 pnpm dev
 pnpm build
 pnpm lint
+pnpm test
 pnpm preview
 ```
+
+The landing is a single page built with Astro and React islands. Its UI comes
+from the turismo-regional microsite: header with section navigation, photo
+hero and gallery, listing details, quote card, reviews, map and footer.
+
+### Editing the content
+
+Every text, photo and link lives in `web/src/data/contents.json`; the `_help`
+key at its top is a short guide. Photos are files in
+`web/src/assets/images/` referenced by file name:
+
+- `gallery.hero`: the five photos of the top grid (the first one is also the
+  link-preview image).
+- `gallery.spaces`: the spaces (Exterior, Cocina, Dormitorio…) shown in the full
+  gallery, each with its own photos, text and beds. An optional
+  `focus: { "x": 0.5, "y": 0.3 }` (0 to 1) keeps that point in view when the
+  photo is cropped.
+
+A file name that does not exist stops the build and names the missing photo.
+Amenity and house-rule `icon` values are keys listed in `web/src/lib/icons.ts`.
+
+### Quote requests
+
+There are no bookings, accounts or search: choosing dates and guests and
+pressing **Pedir cotización** opens WhatsApp (`whatsapp.phone`) with a
+pre-filled message built from `whatsapp.greeting`, the dates, the nights and
+the guests (`web/src/lib/whatsapp.ts`).
 
 The root `pnpm-workspace.yaml` includes both `web/` and `admin/`. Netlify builds
 the public application from `web/` and publishes `web/dist` at the site root.
