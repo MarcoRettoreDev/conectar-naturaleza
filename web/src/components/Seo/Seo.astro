@@ -1,7 +1,8 @@
 ---
-import siteData from "@config/siteData.json";
 import { getImage } from "astro:assets";
 import { SEO } from "astro-seo";
+
+import { siteMeta } from "@/lib/contents";
 
 interface BaseProps {
 	title: string;
@@ -16,13 +17,13 @@ interface GenProps extends BaseProps {
 
 const { title = "general", description, image, noindex = false } = Astro.props as GenProps;
 
-let optimizedImage;
+let optimizedImage: Awaited<ReturnType<typeof getImage>>;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
-// if this is a blog page we do things differently
-if (image) {
+// link previews show the page image, or the first hero photo of contents.json
+{
 	optimizedImage = await getImage({
-		src: image,
+		src: image ?? siteMeta.shareImage(),
 		format: "webp",
 		quality: "high",
 		width: 1200,
@@ -39,7 +40,7 @@ function trimEndSlash(str: string) {
 
 // put together the image URL
 const imageUrl =
-	trimEndSlash(Astro.site?.toString() || "") + (optimizedImage?.src || siteData.defaultImage.src);
+	trimEndSlash(Astro.site?.toString() || "") + optimizedImage.src;
 ---
 
 <SEO
@@ -55,7 +56,7 @@ const imageUrl =
 		},
 		optional: {
 			description: description,
-			siteName: siteData.title,
+			siteName: siteMeta.name,
 		},
 		image: {
 			type: "image/webp",

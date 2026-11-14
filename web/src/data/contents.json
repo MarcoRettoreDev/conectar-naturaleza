@@ -1,0 +1,340 @@
+{
+  "_help": "Editá este archivo para cambiar el contenido del sitio. Las fotos son nombres de archivo dentro de src/assets/images. Íconos válidos: ver src/lib/icons.ts. Un nombre de foto inexistente hace fallar el build.",
+  "site": {
+    "name": "Conectar Naturaleza",
+    "title": "Conectar Naturaleza - Cabaña a orillas del Paraná en Ituzaingó",
+    "description": "Desconectate de la rutina y sumergite en la tranquilidad que te merecés: contacto con la naturaleza en un ambiente reservado, con bajada propia a la playa para lanchas y peatones."
+  },
+  "whatsapp": {
+    "phone": "+5493786414965",
+    "greeting": "Hola, quiero consultar disponibilidad y tarifa en Conectar Naturaleza."
+  },
+  "accommodation": {
+    "property_type": "Cabaña",
+    "locality": "Ituzaingó",
+    "province": "Corrientes",
+    "country": "Argentina",
+    "max_capacity": 6,
+    "description": "Cabaña en el complejo privado «Mattes», con máxima seguridad, a orillas del Río Paraná. Tiene bajada propia a la playa, a 50 m, tanto para lanchas como para peatones. El complejo ofrece espacios verdes y plaza de juegos; la cabaña tiene parrilla y cocina equipada.",
+    "includes_bed_linen": true,
+    "includes_towels": null
+  },
+  "bedrooms": [
+    {
+      "name": "Dormitorio principal",
+      "beds": [
+        {
+          "bed_type": "2 plazas",
+          "quantity": 1
+        }
+      ],
+      "text": "Aire acondicionado"
+    },
+    {
+      "name": "Segundo dormitorio",
+      "beds": [
+        {
+          "bed_type": "Cama marinera",
+          "quantity": 1
+        },
+        {
+          "bed_type": "1 plaza",
+          "quantity": 1
+        }
+      ],
+      "text": "Aire acondicionado"
+    }
+  ],
+  "bathrooms": [
+    {
+      "name": "Baño",
+      "beds": [],
+      "text": null
+    }
+  ],
+  "amenities": [
+    {
+      "icon": "snowflake",
+      "label": "Aire acondicionado en las habitaciones",
+      "shared": false
+    },
+    {
+      "icon": "tv",
+      "label": "TV con Flow",
+      "shared": false
+    },
+    {
+      "icon": "wifi",
+      "label": "Wifi",
+      "shared": false
+    },
+    {
+      "icon": "cooking-pot",
+      "label": "Cocina equipada",
+      "shared": false
+    },
+    {
+      "icon": "flame",
+      "label": "Parrilla",
+      "shared": false
+    },
+    {
+      "icon": "soap-dispenser-droplet",
+      "label": "Shampoo, crema de enjuague y jabón",
+      "shared": false
+    },
+    {
+      "icon": "utensils",
+      "label": "Aceite y sal",
+      "shared": false
+    },
+    {
+      "icon": "coffee",
+      "label": "Café y té",
+      "shared": false
+    },
+    {
+      "icon": "waves",
+      "label": "Bajada a la playa a 50 m, para lanchas y peatones",
+      "shared": false
+    },
+    {
+      "icon": "trees",
+      "label": "Espacios verdes y plaza de juegos",
+      "shared": false
+    },
+    {
+      "icon": "shield-check",
+      "label": "Complejo privado con máxima seguridad",
+      "shared": false
+    }
+  ],
+  "house_rules": {
+    "items": [],
+    "other": null
+  },
+  "highlight": {
+    "title": "Nuestros huéspedes nos respaldan",
+    "text": "Más de 100 reservas concretadas.",
+    "ratings": [
+      {
+        "platform": "Booking",
+        "score": "9.0",
+        "url": "https://www.booking.com/hotel/ar/cabana-conectar-naturaleza.es-ar.html"
+      },
+      {
+        "platform": "Airbnb",
+        "score": "4,75",
+        "url": "https://www.airbnb.com.ar/rooms/1373439887419185949"
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "author_name": "Petter y amigos",
+      "month": null,
+      "rating": 5,
+      "comment": "Nuestro grupo fue al encuentro de motos que siempre se lleva a cabo en noviembre, en Ituzaingó, (Motobeach) y estuvimos muy cómodos en el lugar y en la ciudad. La ubicación de la casa alquilada es una zona verde con vistas al río Paraná, que es un hermoso lugar. ¡Mis amigos y yo estamos muy satisfechos! ¡Lo recomiendo muchísimo!"
+    },
+    {
+      "author_name": "Gloria y familia",
+      "month": null,
+      "rating": 5,
+      "comment": "Todo Exelente! Muy amable el dueño de la cabaña! Estuvo siempre a disposición! Muy tranquilo! Para disfrutar la playa ! Y la naturaleza!"
+    },
+    {
+      "author_name": "Silvana y familia",
+      "month": null,
+      "rating": 5,
+      "comment": "Tienen la Costanera a metros, espectacular,lleva cañaaaa!! súper tranquilo y seguro"
+    }
+  ],
+  "location": {
+    "latitude": -27.5915042,
+    "longitude": -56.7093488,
+    "text": "A orillas del Río Paraná"
+  },
+  "gallery": {
+    "hero": [
+      "portada.jpeg",
+      "exterior.jpg",
+      "sala.jpeg",
+      "hab-1.jpg",
+      "playa-2.jpg"
+    ],
+    "spaces": [
+      {
+        "name": "Exterior y entorno",
+        "description": null,
+        "beds": [],
+        "shared": false,
+        "photos": [
+          {
+            "file": "portada.jpeg"
+          },
+          {
+            "file": "exterior.jpg"
+          },
+          {
+            "file": "exterior-2.jpeg"
+          },
+          {
+            "file": "cielo-verde.jpg"
+          },
+          {
+            "file": "juegos.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Playa y bajada al río",
+        "description": "Bajada propia a la playa, a 50 m, para lanchas y peatones.",
+        "beds": [],
+        "shared": false,
+        "photos": [
+          {
+            "file": "playa-2.jpg"
+          },
+          {
+            "file": "bajada.jpeg"
+          },
+          {
+            "file": "bajada-1.jpg"
+          },
+          {
+            "file": "bajada-peatonal.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Living y comedor",
+        "description": null,
+        "beds": [],
+        "shared": false,
+        "photos": [
+          {
+            "file": "sala.jpeg"
+          },
+          {
+            "file": "WhatsApp Image 2026-04-16 at 18.29.37.jpeg"
+          },
+          {
+            "file": "tv.jpeg"
+          },
+          {
+            "file": "WhatsApp Image 2026-04-16 at 18.29.36.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Cocina",
+        "description": "Cocina equipada.",
+        "beds": [],
+        "shared": false,
+        "photos": [
+          {
+            "file": "cocina.jpeg"
+          },
+          {
+            "file": "IMG_1094.jpg"
+          },
+          {
+            "file": "vajilla.jpg"
+          },
+          {
+            "file": "amenities.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Dormitorio principal",
+        "description": null,
+        "beds": [
+          {
+            "bed_type": "2 plazas",
+            "quantity": 1
+          }
+        ],
+        "shared": false,
+        "photos": [
+          {
+            "file": "hab-1.jpg"
+          },
+          {
+            "file": "hab1-2.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Segundo dormitorio",
+        "description": null,
+        "beds": [
+          {
+            "bed_type": "Cama marinera",
+            "quantity": 1
+          },
+          {
+            "bed_type": "1 plaza",
+            "quantity": 1
+          }
+        ],
+        "shared": false,
+        "photos": [
+          {
+            "file": "hab-2.jpg"
+          },
+          {
+            "file": "WhatsApp Image 2026-04-16 at 18.29.38.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Baño",
+        "description": null,
+        "beds": [],
+        "shared": false,
+        "photos": [
+          {
+            "file": "banio-1.jpg"
+          },
+          {
+            "file": "banio-2.jpg"
+          },
+          {
+            "file": "banio.jpeg"
+          },
+          {
+            "file": "banio-3.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Parrilla",
+        "description": null,
+        "beds": [],
+        "shared": false,
+        "photos": [
+          {
+            "file": "parrilla.jpeg"
+          },
+          {
+            "file": "parrilla-2.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "slogan": "Desconectá de la rutina y conectá con eso que te hace bien.",
+    "links": [
+      {
+        "label": "Booking",
+        "url": "https://www.booking.com/hotel/ar/cabana-conectar-naturaleza.es-ar.html"
+      },
+      {
+        "label": "Airbnb",
+        "url": "https://www.airbnb.com.ar/rooms/1373439887419185949"
+      }
+    ]
+  }
+}

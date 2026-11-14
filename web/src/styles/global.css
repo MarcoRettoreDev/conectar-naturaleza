@@ -1,87 +1,127 @@
-@import url("./fonts.css");
-
+@import "@fontsource-variable/instrument-sans";
 @import "tailwindcss";
+@import "tw-animate-css";
 
-/* tailwind plugins */
-@plugin "@tailwindcss/forms";
+@custom-variant dark (&:is(.dark *));
 
-/* theme definition import */
-@import "./tailwind-theme.css";
+@theme {
+	--font-sans:
+		"Instrument Sans Variable", "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-/* other imports into specific layers */
-@import "./markdown-content.css" layer(components);
-@import "./buttons.css" layer(components);
+	--color-verde-900: #26362c;
+	--color-oliva-600: #6b7846;
+	--color-petroleo-500: #5e8280;
+	--color-petroleo-600: #547573;
+	--color-ocre-400: #e9b258;
+	--color-blanco: #ffffff;
+	--color-verde-intenso-700: #15803d;
+	--color-verde-intenso-50: #eaf6ee;
+	--color-rojo-700: #b42318;
+	--color-rojo-50: #fdecea;
 
-/* https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
+	--color-brand-accent: var(--color-ocre-400);
+	--color-brand-accent-foreground: var(--color-verde-900);
+	--color-text-accent: var(--color-petroleo-500);
+	--color-icon-default: var(--color-oliva-600);
+	--color-icon-accent: var(--color-petroleo-500);
+	--color-icon-success: var(--color-verde-intenso-700);
+	--color-icon-danger: var(--color-rojo-700);
+
+	--radius-lg: var(--radius);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-sm: calc(var(--radius) - 4px);
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-destructive-subtle: var(--destructive-subtle);
+	--color-destructive-text: var(--destructive-text);
+
+	--color-success: var(--success);
+	--color-success-foreground: var(--success-foreground);
+	--color-success-subtle: var(--success-subtle);
+	--color-success-text: var(--success-text);
+
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+}
+
+:root {
+	--background: var(--color-blanco);
+	--foreground: var(--color-verde-900);
+	--card: var(--color-blanco);
+	--card-foreground: var(--color-verde-900);
+	--popover: var(--color-blanco);
+	--popover-foreground: var(--color-verde-900);
+	--primary: var(--color-verde-900);
+	--primary-foreground: var(--color-blanco);
+	--secondary: rgb(38 54 44 / 0.06);
+	--secondary-foreground: var(--color-verde-900);
+	--muted: rgb(38 54 44 / 0.06);
+	--muted-foreground: var(--color-oliva-600);
+	--accent: rgb(38 54 44 / 0.06);
+	--accent-foreground: var(--color-verde-900);
+	--destructive: var(--color-rojo-700);
+	--destructive-foreground: var(--color-blanco);
+	--destructive-subtle: var(--color-rojo-50);
+	--destructive-text: var(--color-rojo-700);
+	--success: var(--color-verde-intenso-700);
+	--success-foreground: var(--color-blanco);
+	--success-subtle: var(--color-verde-intenso-50);
+	--success-text: var(--color-verde-intenso-700);
+	--border: rgb(38 54 44 / 0.16);
+	--input: rgb(38 54 44 / 0.16);
+	--ring: var(--color-verde-900);
+	--radius: 0.625rem;
+}
+
 @layer base {
-	:root {
-		/* default font */
+	* {
+		@apply border-border;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-background text-foreground;
 		font-family: var(--font-sans);
 	}
 
-	/* starwind preflight merged with Cosmic Themes */
-	* {
-		@apply border-base-200 outline-none;
-	}
-	*:focus-visible {
-		@apply ring-primary-300 rounded-none ring-2 transition-none outline-none;
-	}
-	html {
-		@apply bg-base-100 text-base-900 leading-[1.6rem] scheme-light;
-		scroll-behavior: smooth;
-		-moz-text-size-adjust: none;
-		-webkit-text-size-adjust: none;
-		text-size-adjust: none;
-	}
-	button {
-		@apply cursor-pointer;
-	}
-}
-
-@layer components {
-	.h1 {
-		@apply font-heading-1 text-4xl font-semibold lg:text-5xl;
-	}
-
-	.h2 {
-		@apply font-heading-1 text-2xl leading-tight tracking-wide uppercase md:text-[2.5rem] md:leading-tight;
-	}
-
-	.h3 {
-		@apply font-heading-2 text-lg leading-tight font-medium tracking-widest uppercase md:text-2xl md:leading-tight;
-	}
-
-	.description {
-		@apply text-base-700;
-	}
-
-	.site-container {
-		@apply mx-auto max-w-[74rem] px-4;
-	}
-
-	/* used for various form inputs */
-	.form__label {
-		@apply text-base-800 dark:text-base-200;
-	}
-
-	.form__input {
-		@apply border-primary-300 text-base-900 placeholder-base-500 w-full rounded-none border bg-transparent px-4 py-2 transition duration-200 outline-none;
-		@apply focus:border-primary-400 focus-visible:border-primary-400 focus:ring-0 focus:outline-none focus-visible:outline-none;
-	}
-
-	/* styles navbar links */
-	.nav__link--base {
-		@apply font-heading-1 px-4 py-2 tracking-wide uppercase transition duration-200 hover:opacity-80;
-	}
-}
-
-@layer utilities {
-	/* main gradient. Used for categories and some headings */
-	.main-text-gradient {
-		@apply bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent;
-	}
-
-	.rotate-180 {
-		@apply rotate-180;
+	button:not(:disabled),
+	[role="button"]:not([aria-disabled="true"]),
+	[role="tab"],
+	[role="checkbox"],
+	[role="radio"],
+	[role="switch"],
+	summary,
+	select,
+	input[type="checkbox"],
+	input[type="radio"],
+	input[type="submit"] {
+		cursor: pointer;
 	}
 }

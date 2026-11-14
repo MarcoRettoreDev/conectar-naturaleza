@@ -1,24 +1,14 @@
 ---
-import About from "@components/About/About.astro";
-import Contact from "@components/Contact/Contact.astro";
-import FeatureNumbers from "@components/Feature/FeatureNumbers.astro";
-import Gallery from "@components/Gallery/Gallery.astro";
-// components
-import Hero from "@components/Hero/Hero.astro";
-import Facilities from "@components/Pricing/Facilities.astro";
-import Testimonials from "@components/Testimonials/Testimonials.astro";
-// data
-import siteData from "@config/siteData.json";
-// layout
+import Footer from "@components/microsite/Footer.astro";
+import MicrositePage from "@components/microsite/microsite-page";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { loadMicrosite, siteMeta } from "@/lib/contents";
+
+const site = await loadMicrosite();
 ---
 
-<BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
-	<Hero />
-	<FeatureNumbers />
-	<Facilities />
-	<About />
-	<Gallery />
-	<Testimonials />
-	<Contact />
+<BaseLayout title={siteMeta.title} description={siteMeta.description} heroImage={siteMeta.shareImage()}>
+	<MicrositePage client:load site={site} />
+	<Footer name={site.name} footer={site.footer} />
 </BaseLayout>
